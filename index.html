@@ -1,250 +1,114 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김민석 자기소개</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 50px 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            font-size: 1.5em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            font-weight: 600;
-        }
-        
-        .info-box {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .info-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-        
-        .info-box p {
-            font-size: 1.1em;
-            color: #2c3e50;
-            line-height: 1.8;
-        }
-        
-        .mbti-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .mbti-box .mbti-label {
-            font-size: 1em;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-        
-        .mbti-box .mbti-value {
-            font-size: 3em;
-            font-weight: 700;
-            letter-spacing: 5px;
-        }
-        
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .education-card {
-            background: white;
-            border: 2px solid #e0e0e0;
-            padding: 25px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .education-card:hover {
-            border-color: #667eea;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.2);
-        }
-        
-        .education-card .level {
-            font-size: 0.9em;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-        
-        .education-card .school {
-            font-size: 1.1em;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .contact-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .contact-card .label {
-            font-size: 0.9em;
-            opacity: 0.9;
-            margin-bottom: 8px;
-        }
-        
-        .contact-card .value {
-            font-size: 1.2em;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .education-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mbti-box .mbti-value {
-                font-size: 2.5em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김민석 자기소개</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+padding: 20px;
+background-color: #f4f4f4;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+background-color: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+color: #333;
+margin-bottom: 20px;
+border-bottom: 3px solid #333;
+padding-bottom: 10px;
+}
+
+h2 {
+color: #555;
+margin-top: 30px;
+margin-bottom: 15px;
+}
+
+.intro {
+margin-bottom: 20px;
+font-size: 16px;
+}
+
+.mbti {
+margin-bottom: 20px;
+font-size: 16px;
+}
+
+.education {
+margin-bottom: 20px;
+}
+
+.education-box {
+border: 2px solid #333;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 5px;
+background-color: #fafafa;
+}
+
+.education-box strong {
+color: #333;
+}
+
+.contact {
+margin-top: 20px;
+}
+
+.contact p {
+margin-bottom: 10px;
+font-size: 16px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>김민석</h1>
-            <p class="subtitle">전북대학교 스마트팜학과 25학번</p>
-        </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">소개</h2>
-                <div class="info-box">
-                    <p>안녕하세요. 저는 전북대학교 스마트팜학과 25학번 김민석입니다.<br>
-                    새로운 기술과 농업의 융합에 관심이 많으며, 미래 농업 발전에 기여하고 싶습니다.</p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">성격 유형</h2>
-                <div class="mbti-box">
-                    <div class="mbti-label">MBTI</div>
-                    <div class="mbti-value">ESTP</div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">학력</h2>
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="level">초등학교</div>
-                        <div class="school">경기도 군포<br>당정초등학교</div>
-                    </div>
-                    <div class="education-card">
-                        <div class="level">중학교</div>
-                        <div class="school">경기도 군포<br>당정중학교</div>
-                    </div>
-                    <div class="education-card">
-                        <div class="level">고등학교</div>
-                        <div class="school">경기도 군포<br>용호고등학교</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">연락처</h2>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="label">전화번호</div>
-                        <div class="value">010-4738-3786</div>
-                    </div>
-                    <div class="contact-card">
-                        <div class="label">이메일</div>
-                        <div class="value">thefancy1tp@gmail.com</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+<h1>자기소개</h1>
+
+<div class="intro">
+<p>안녕하세요 저는 전북대학교 스마트팜학과 25학번 김민석 입니다</p>
+</div>
+
+<div class="mbti">
+<h2>MBTI</h2>
+<p>ESTP</p>
+</div>
+
+<div class="education">
+<h2>학력</h2>
+<div class="education-box">
+<strong>초등학교:</strong> 경기도 군포 당정초등학교
+</div>
+<div class="education-box">
+<strong>중학교:</strong> 경기도 군포 당정중학교
+</div>
+<div class="education-box">
+<strong>고등학교:</strong> 경기도 군포 용호고등학교
+</div>
+</div>
+
+<div class="contact">
+<h2>연락처</h2>
+<p><strong>전화번호:</strong> 010-4738-3786</p>
+<p><strong>이메일:</strong> thefancy1tp@gmail.com</p>
+</div>
+</div>
 </body>
 </html>
+
+
