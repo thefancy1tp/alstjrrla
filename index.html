@@ -1,114 +1,387 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김민석 자기소개</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: Arial, sans-serif;
-line-height: 1.6;
-padding: 20px;
-background-color: #f4f4f4;
-}
-
-.container {
-max-width: 800px;
-margin: 0 auto;
-background-color: white;
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-color: #333;
-margin-bottom: 20px;
-border-bottom: 3px solid #333;
-padding-bottom: 10px;
-}
-
-h2 {
-color: #555;
-margin-top: 30px;
-margin-bottom: 15px;
-}
-
-.intro {
-margin-bottom: 20px;
-font-size: 16px;
-}
-
-.mbti {
-margin-bottom: 20px;
-font-size: 16px;
-}
-
-.education {
-margin-bottom: 20px;
-}
-
-.education-box {
-border: 2px solid #333;
-padding: 15px;
-margin-bottom: 10px;
-border-radius: 5px;
-background-color: #fafafa;
-}
-
-.education-box strong {
-color: #333;
-}
-
-.contact {
-margin-top: 20px;
-}
-
-.contact p {
-margin-bottom: 10px;
-font-size: 16px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김민석 자기소개</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 헤더 고정 */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #000;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        /* 메인 콘텐츠 */
+        .content {
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+        }
+        
+        .section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #000;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #000;
+            font-weight: bold;
+        }
+        
+        /* 소개 박스 */
+        .intro-box {
+            background-color: #000;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .intro-box p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        /* MBTI 박스 */
+        .mbti-box {
+            background-color: white;
+            border: 3px solid #000;
+            color: #000;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .mbti-box .mbti-type {
+            font-size: 3.5em;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin-top: 10px;
+        }
+        
+        /* 학력 박스 */
+        .education-container {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .education-box {
+            background-color: #f8f8f8;
+            border: 2px solid #000;
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .education-box:hover {
+            background-color: #000;
+            color: white;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .education-box .level {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .education-box:hover .level {
+            background-color: white;
+            color: #000;
+        }
+        
+        .education-box .school {
+            font-size: 1.15em;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .education-box:hover .school {
+            color: white;
+        }
+        
+        /* 연락처 박스 */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-box {
+            background-color: white;
+            border: 2px solid #000;
+            color: #000;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .contact-box:hover {
+            background-color: #000;
+            color: white;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .contact-box .label {
+            font-size: 1em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .contact-box .value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        /* Contact 섹션 추가 스타일 */
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info > p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            background-color: #f8f8f8;
+            border: 2px solid #000;
+            color: #000;
+            padding: 35px 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .contact-item:hover {
+            background-color: #000;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
+        }
+        
+        .contact-item:hover h3 {
+            border-bottom-color: white;
+        }
+        
+        .contact-item p {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        /* 스크롤바 스타일 */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #000;
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .mbti-box .mbti-type {
+                font-size: 2.5em;
+                letter-spacing: 5px;
+            }
+            
+            .contact-container,
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>자기소개</h1>
-
-<div class="intro">
-<p>안녕하세요 저는 전북대학교 스마트팜학과 25학번 김민석 입니다</p>
-</div>
-
-<div class="mbti">
-<h2>MBTI</h2>
-<p>ESTP</p>
-</div>
-
-<div class="education">
-<h2>학력</h2>
-<div class="education-box">
-<strong>초등학교:</strong> 경기도 군포 당정초등학교
-</div>
-<div class="education-box">
-<strong>중학교:</strong> 경기도 군포 당정중학교
-</div>
-<div class="education-box">
-<strong>고등학교:</strong> 경기도 군포 용호고등학교
-</div>
-</div>
-
-<div class="contact">
-<h2>연락처</h2>
-<p><strong>전화번호:</strong> 010-4738-3786</p>
-<p><strong>이메일:</strong> thefancy1tp@gmail.com</p>
-</div>
-</div>
+    <div class="container">
+        <header class="header">
+            <h1>김민석</h1>
+            <p class="subtitle">전북대학교 스마트팜학과 25학번</p>
+        </header>
+        
+        <main class="content">
+            <!-- 소개 섹션 -->
+            <section class="section">
+                <h2 class="section-title">소개</h2>
+                <div class="intro-box">
+                    <p>안녕하세요. 저는 전북대학교 스마트팜학과 25학번 김민석입니다.</p>
+                </div>
+            </section>
+            
+            <!-- MBTI 섹션 -->
+            <section class="section">
+                <h2 class="section-title">MBTI</h2>
+                <div class="mbti-box">
+                    <div class="mbti-type">ESTP</div>
+                </div>
+            </section>
+            
+            <!-- 학력 섹션 -->
+            <section class="section">
+                <h2 class="section-title">학력</h2>
+                <div class="education-container">
+                    <div class="education-box">
+                        <span class="level">초등학교</span>
+                        <div class="school">경기도 군포 당정초등학교</div>
+                    </div>
+                    <div class="education-box">
+                        <span class="level">중학교</span>
+                        <div class="school">경기도 군포 당정중학교</div>
+                    </div>
+                    <div class="education-box">
+                        <span class="level">고등학교</span>
+                        <div class="school">경기도 군포 용호고등학교</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 연락처 섹션 -->
+            <section class="section">
+                <h2 class="section-title">연락처</h2>
+                <div class="contact-container">
+                    <div class="contact-box">
+                        <div class="label">전화번호</div>
+                        <div class="value">010-4738-3786</div>
+                    </div>
+                    <div class="contact-box">
+                        <div class="label">이메일</div>
+                        <div class="value">thefancy1tp@gmail.com</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact 섹션 -->
+            <section class="section contact">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-info">
+                    <p>궁금한 점이 있으시면 연락주세요!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>이메일</h3>
+                            <p>thefancy1tp@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>전화번호</h3>
+                            <p>010-4738-3786</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>인스타그램</h3>
+                            <p>@a1stjrrla</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
+
+
 
 
